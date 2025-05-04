@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Typewriter from 'typewriter-effect';
+
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,13 +23,37 @@ function App() {
       </nav>
 
 
-      {/* Content wrapper */}
-      <main className="min-h-screen flex items-center justify-center pt-28 px-6 bg-gradient-to-br from-purple-50 to-white">
-        <div className="text-center space-y-4">
+      {/* Landing Page / About*/}
+      <main className="relative min-h-screen flex items-center justify-center pt-28 px-6 bg-white overflow-hidden">
+        {/* Glowing Background Blob */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 w-[60rem] max-w-screen-xl -translate-x-1/2 -translate-y-1/2 opacity-100 blur-3xl">
+            <div className="aspect-square w-full bg-gradient-to-tr from-purple-400 via-pink-300 to-indigo-300 rounded-full mix-blend-multiply" />
+          </div>
+        </div>
+
+        {/* Optional bottom fade */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-0" />
+
+        {/* Hero Text */}
+        <div className="text-center space-y-4 relative z-10">
           <h1 className="text-5xl font-extrabold text-purple-700">Elisa Holland</h1>
-          <p className="text-lg text-gray-600">Software Engineer · Project Manager</p>
+          <p className="text-lg text-gray-600">
+            I'm a&nbsp;
+            <span className="text-purple-500 font-semibold">
+              <Typewriter
+                options={{
+                  strings: ['software engineer.', 'project manager.', 'problem solver.'],
+                  autoStart: true,
+                  loop: true,
+                  pauseFor: 2000,
+                }}
+              />
+            </span>
+          </p>
         </div>
       </main>
+
 
       {/* Skills */}
       <section id="skills" className="py-20 border-b border-purple-100">
