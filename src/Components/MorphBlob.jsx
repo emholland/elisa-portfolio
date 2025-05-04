@@ -56,9 +56,10 @@ export default function MorphBlobs() {
 
         {/* Mouse-Following Blob */}
         <div
-          ref={mouseBlobRef}
-          className="blob bg-yellow-400 fixed top-0 left-0 w-[200px] h-[200px]"
+            ref={mouseBlobRef}
+            className="mouseblob bg-yellow-400 fixed top-0 left-0 w-[100px] h-[100px]"
         />
+
       </div>
     </div>
   );
