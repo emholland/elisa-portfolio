@@ -4,4 +4,18 @@ html {
     scroll-behavior: smooth;
   }
   
-
+  @keyframes blob-smooth {
+    0%, 100% {
+      transform: scale(1);
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      transform: scale(1.08);
+      filter: hue-rotate(30deg);
+    }
+  }
+  
+  .animate-blob-smooth {
+    animation: blob-smooth 16s ease-in-out infinite;
+  }
+  

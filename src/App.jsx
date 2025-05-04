@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Typewriter from 'typewriter-effect';
+import Blob from "./Components/Blob";
 
 
 
@@ -23,22 +22,15 @@ function App() {
       </nav>
 
 
-      {/* Landing Page / About*/}
-      <main className="relative min-h-screen flex items-center justify-center pt-28 px-6 bg-white overflow-hidden">
-        {/* Glowing Background Blob */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 w-[60rem] max-w-screen-xl -translate-x-1/2 -translate-y-1/2 opacity-100 blur-3xl">
-            <div className="aspect-square w-full bg-gradient-to-tr from-purple-400 via-pink-300 to-indigo-300 rounded-full mix-blend-multiply" />
-          </div>
-        </div>
-
-        {/* Optional bottom fade */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-0" />
+      {/* Landing Page / About */}
+      <main className="relative min-h-screen bg-white overflow-hidden flex items-center justify-center pt-28 px-6">
+        {/* Animated Blob Background */}
+        <Blob />
 
         {/* Hero Text */}
-        <div className="text-center space-y-4 relative z-10">
+        <div className="text-center z-20 space-y-4">
           <h1 className="text-5xl font-extrabold text-purple-700">Elisa Holland</h1>
-          <p className="text-lg text-gray-600">
+          <div className="text-lg text-gray-600">
             I'm a&nbsp;
             <span className="text-purple-500 font-semibold">
               <Typewriter
@@ -50,9 +42,13 @@ function App() {
                 }}
               />
             </span>
-          </p>
+          </div>
         </div>
       </main>
+
+
+
+
 
 
       {/* Skills */}
