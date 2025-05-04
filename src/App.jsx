@@ -35,7 +35,20 @@ function App() {
             <span className="text-purple-500 font-semibold">
               <Typewriter
                 options={{
-                  strings: ['software engineer.', 'project manager.', 'problem solver.'],
+                  strings: ["software engineer.",
+                            "web designer.",
+                            "project manager.",
+                            "frontend developer.",
+                            "software engineer.",
+                            "problem solver.",
+                            "design thinker.",
+                            "software engineer.",
+                            "bug fixer.",
+                            "curious creator.",
+                            "automation scripter.",
+                            "software engineer.",
+                            "cloud integrator.",
+                            "code artist."],
                   autoStart: true,
                   loop: true,
                   pauseFor: 2000,
