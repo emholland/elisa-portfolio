@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Typewriter from 'typewriter-effect';
-import Blob from "./Components/Blob";
+import MorphBlob from "./Components/MorphBlob";
 
 
 
@@ -25,7 +25,7 @@ function App() {
       {/* Landing Page / About */}
       <main className="relative min-h-screen bg-white overflow-hidden flex items-center justify-center pt-28 px-6">
         {/* Animated Blob Background */}
-        <Blob />
+        <MorphBlob />
 
         {/* Hero Text */}
         <div className="text-center z-20 space-y-4">
@@ -45,11 +45,6 @@ function App() {
           </div>
         </div>
       </main>
-
-
-
-
-
 
       {/* Skills */}
       <section id="skills" className="py-20 border-b border-purple-100">

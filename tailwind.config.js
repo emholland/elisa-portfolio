@@ -4,6 +4,7 @@ export default {
       "./index.html",
       "./src/**/*.{js,jsx,ts,tsx}",
     ],
+    safelist: ["animate-float1", "animate-float2", "animate-float3"],
     theme: {
       extend: {},
     },
