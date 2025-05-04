@@ -1,12 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
 import Typewriter from 'typewriter-effect';
 import MorphBlob from "./Components/MorphBlob";
+import SkillsCard from './Components/SkillCard';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true, // Only animate once per element
+    });
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 to-white text-gray-800 font-sans">
@@ -18,6 +30,15 @@ function App() {
           <li><a href="#projects" className="hover:text-purple-600">Projects</a></li>
           <li><a href="#experience" className="hover:text-purple-600">Experience</a></li>
           <li><a href="#contact" className="hover:text-purple-600">Contact</a></li>
+          <li>
+            <a
+              href="/resume.pdf"
+              download
+              className="text-purple-600 hover:underline"
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -63,7 +84,7 @@ function App() {
       <section id="skills" className="py-20 border-b border-purple-100">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Skills</h2>
-          <p className="text-gray-600">List of technical and soft skills will go here.</p>
+          <SkillsCard />
         </div>
       </section>
 
