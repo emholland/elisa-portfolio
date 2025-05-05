@@ -46,18 +46,21 @@ export default function MorphBlobs() {
       </svg>
 
       <div
-        className="absolute inset-0"
-        style={{ filter: "url(#goo)", width: "100%", height: "100%" }}
-      >
+  className="absolute top-0 left-0 w-full min-h-full z-0 pointer-events-none"
+  style={{ filter: "url(#goo)" }}
+>
+
         {/* Floating Blobs */}
-        <div className="blob floatBlob1 bg-purple-600 top-[10%] left-[10%]" />
+        <div className="blob floatBlob1 bg-yellow-600 top-[10%] left-[10%]" />
         <div className="blob floatBlob2 bg-pink-500 top-[50%] left-[60%]" />
-        <div className="blob floatBlob3 bg-indigo-600 top-[75%] left-[30%]" />
+        <div className="blob floatBlob3 bg-green-600 top-[75%] left-[30%]" />
+        <div className="blob floatBlob4 bg-indigo-400 top-[30%] left-[80%]" />
+
 
         {/* Mouse-Following Blob */}
         <div
             ref={mouseBlobRef}
-            className="mouseblob bg-yellow-400 fixed top-0 left-0 w-[100px] h-[100px]"
+            className="mouseblob bg-purple-400 fixed top-0 left-0"
         />
 
       </div>

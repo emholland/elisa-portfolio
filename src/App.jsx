@@ -4,6 +4,7 @@ import Typewriter from 'typewriter-effect';
 import MorphBlob from "./Components/MorphBlob";
 import Contacts from './Components/Contacts';
 import SkillsCard from './Components/SkillCard';
+import AboutMe from './Components/AbooutMe';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -45,42 +46,49 @@ function App() {
 
 
       {/* Landing Page / About */}
-      <main className="relative min-h-screen bg-white overflow-hidden flex items-center justify-center pt-28 px-6">
-        {/* Animated Blob Background */}
-        <MorphBlob />
+      <main className="relative bg-white overflow-hidden">
+  {/* Blob Background */}
+  <div className="absolute inset-0 z-0">
+    <MorphBlob className="w-full h-full" />
+  </div>
+
+  {/* Hero Section */}
+  <section className="relative z-10 min-h-screen flex flex-col items-center justify-center pt-28 px-6 text-center space-y-4">
+    <h1 className="text-5xl font-extrabold text-purple-700">Elisa Holland</h1>
+    <div className="text-lg text-gray-600">
+      I'm a&nbsp;
+      <span className="text-purple-500 font-semibold">
+        <Typewriter
+          options={{
+            strings: [
+              "software engineer.",
+              "web designer.",
+              "project manager.",
+              "frontend developer.",
+              "problem solver.",
+              "design thinker.",
+              "bug fixer.",
+              "curious creator.",
+              "automation scripter.",
+              "cloud integrator.",
+              "code artist.",
+            ],
+            autoStart: true,
+            loop: true,
+            pauseFor: 2000,
+          }}
+        />
+      </span>
+    </div>
+  </section>
+
+  {/* About Me Section */}
+  <section className="relative z-10 px-6 pt-16 pb-32">
+    <AboutMe />
+  </section>
+</main>
 
 
-        {/* Hero Text */}
-        <div className="text-center z-20 space-y-4">
-          <h1 className="text-5xl font-extrabold text-purple-700">Elisa Holland</h1>
-          <div className="text-lg text-gray-600">
-            I'm a&nbsp;
-            <span className="text-purple-500 font-semibold">
-              <Typewriter
-                options={{
-                  strings: ["software engineer.",
-                            "web designer.",
-                            "project manager.",
-                            "frontend developer.",
-                            "software engineer.",
-                            "problem solver.",
-                            "design thinker.",
-                            "software engineer.",
-                            "bug fixer.",
-                            "curious creator.",
-                            "automation scripter.",
-                            "software engineer.",
-                            "cloud integrator.",
-                            "code artist."],
-                  autoStart: true,
-                  loop: true,
-                  pauseFor: 2000,
-                }}
-              />
-            </span>
-          </div>
-        </div>
-      </main>
 
       {/* Skills */}
       <section id="skills" className="py-20 border-b border-purple-100">

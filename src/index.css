@@ -11,8 +11,8 @@ html {
 /* Blob base style */
 .blob {
     position: absolute;
-    width: 30rem;
-    height: 30rem;
+    width: 35rem;
+    height: 35rem;
     border-radius: 50%;
     opacity: 0.53;
     filter: blur(30px);
@@ -33,34 +33,37 @@ html {
   
   @keyframes floatBlob1 {
     0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
-    15%  { transform: translate(120px, -90px) scale(1.2) rotate(18deg); }
-    30%  { transform: translate(-140px, 60px) scale(0.9) rotate(-20deg); }
-    45%  { transform: translate(100px, 100px) scale(1.1) rotate(12deg); }
-    60%  { transform: translate(-80px, -100px) scale(1.15) rotate(-15deg); }
-    75%  { transform: translate(140px, -60px) scale(0.85) rotate(10deg); }
-    90%  { transform: translate(-60px, 90px) scale(1.25) rotate(-25deg); }
+    20%  { transform: translate(100px, -150px) scale(1.2) rotate(15deg); }
+    40%  { transform: translate(-90px, 250px) scale(0.95) rotate(-20deg); }
+    60%  { transform: translate(90px, 180px) scale(1.1) rotate(10deg); }
+    80%  { transform: translate(-50px, -200px) scale(1.05) rotate(-15deg); }
     100% { transform: translate(0, 0) scale(1) rotate(0deg); }
   }
   
   @keyframes floatBlob2 {
     0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
-    20%  { transform: translate(-150px, 180px) scale(1.05) rotate(14deg); }
-    40%  { transform: translate(180px, -100px) scale(1.25) rotate(-22deg); }
-    60%  { transform: translate(-80px, -140px) scale(0.85) rotate(18deg); }
-    80%  { transform: translate(160px, 70px) scale(1.1) rotate(-10deg); }
+    20%  { transform: translate(-1100px, 300px) scale(1.1) rotate(18deg); }
+    40%  { transform: translate(100px, -200px) scale(1.25) rotate(-22deg); }
+    60%  { transform: translate(-70px, -250px) scale(0.9) rotate(12deg); }
+    80%  { transform: translate(90px, 200px) scale(1.1) rotate(-10deg); }
     100% { transform: translate(0, 0) scale(1) rotate(0deg); }
   }
   
   @keyframes floatBlob3 {
     0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
-    25%  { transform: translate(140px, 130px) scale(0.9) rotate(-12deg); }
-    50%  { transform: translate(-160px, -80px) scale(1.2) rotate(24deg); }
-    75%  { transform: translate(180px, -120px) scale(1.05) rotate(-18deg); }
+    25%  { transform: translate(90px, 250px) scale(0.95) rotate(-12deg); }
+    50%  { transform: translate(-80px, -180px) scale(1.2) rotate(24deg); }
+    75%  { transform: translate(100px, -250px) scale(1.05) rotate(-18deg); }
     100% { transform: translate(0, 0) scale(1) rotate(0deg); }
   }
   
-  
-  
+  @keyframes floatBlob4 {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25%  { transform: translate(150px, 300px) scale(0.9) rotate(-12deg); }
+    50%  { transform: translate(80px, -300px) scale(1.2) rotate(24deg); }
+    75%  { transform: translate(150px, -220px) scale(1.05) rotate(-18deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  }
   
   /* Classes assigned to each blob */
   .floatBlob1 {
@@ -70,6 +73,9 @@ html {
     animation: floatBlob2 28s ease-in-out infinite;
   }
   .floatBlob3 {
+    animation: floatBlob3 26s ease-in-out infinite;
+  }
+  .floatBlob4 {
     animation: floatBlob3 26s ease-in-out infinite;
   }
   
