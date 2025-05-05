@@ -32,7 +32,7 @@ function App() {
           <li><a href="#contact" className="hover:text-purple-600">Contact</a></li>
           <li>
             <a
-              href="/resume.pdf"
+              href="/elisaholland_resume.pdf"
               download
               className="text-purple-600 hover:underline"
             >
@@ -47,6 +47,7 @@ function App() {
       <main className="relative min-h-screen bg-white overflow-hidden flex items-center justify-center pt-28 px-6">
         {/* Animated Blob Background */}
         <MorphBlob />
+
 
         {/* Hero Text */}
         <div className="text-center z-20 space-y-4">
