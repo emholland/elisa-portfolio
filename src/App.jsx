@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import Typewriter from 'typewriter-effect';
 import MorphBlob from "./Components/MorphBlob";
+import Contacts from './Components/Contacts';
 import SkillsCard from './Components/SkillCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -109,7 +110,7 @@ function App() {
       <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Contact</h2>
-          <p className="text-gray-600">Contact form or email/social links will live here.</p>
+          <Contacts />
         </div>
       </section>
 
