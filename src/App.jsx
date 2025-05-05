@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Experience from './Components/Experience';
+import Experiences from './Components/Experience';
 import Typewriter from 'typewriter-effect';
 import MorphBlob from "./Components/MorphBlob";
 import Contacts from './Components/Contacts';
@@ -111,7 +111,7 @@ function App() {
       <section id="experience" className="py-20 border-b border-purple-100">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Experience</h2>
-          <Experience />
+          <Experiences />
         </div>
       </section>
 
