@@ -26,7 +26,7 @@ export default function MorphBlobs() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 z-0 overflow-visible pointer-events-none">
       {/* Gooey Filter Container */}
       <svg className="absolute w-0 h-0">
         <filter id="goo">
@@ -51,10 +51,10 @@ export default function MorphBlobs() {
 >
 
         {/* Floating Blobs */}
-        <div className="blob floatBlob1 bg-yellow-600 top-[10%] left-[10%]" />
-        <div className="blob floatBlob2 bg-pink-500 top-[50%] left-[60%]" />
-        <div className="blob floatBlob3 bg-green-600 top-[75%] left-[30%]" />
-        <div className="blob floatBlob4 bg-indigo-400 top-[30%] left-[80%]" />
+        <div className="blob floatBlob1 bg-yellow-600 top-[10%] left-[30%]" />
+        <div className="blob floatBlob2 bg-pink-500 top-[40%] left-[60%]" />
+        <div className="blob floatBlob3 bg-green-600 top-[65%] left-[30%]" />
+        <div className="blob floatBlob4 bg-indigo-400 top-[40%] left-[10%]" />
 
 
         {/* Mouse-Following Blob */}
