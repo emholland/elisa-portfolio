@@ -47,7 +47,7 @@ function App() {
 
 
       {/* Landing Page / About */}
-      <main className="relative bg-white overflow-hidden">
+      <main className="relative bg-white overflow-visible">
   {/* Blob Background */}
   <div className="absolute inset-0 z-0">
     <MorphBlob className="w-full h-full" />
@@ -92,44 +92,64 @@ function App() {
 
 
       {/* Skills */}
-      <section id="skills" className="py-20 border-b border-purple-100">
+      <section id="skills" style={{ backgroundColor: 'white' }} className="py-20 border-b border-purple-100">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-purple-700 mb-4">Skills</h2>
+          <h2 className="text-3xl font-bold text-purple-500 mb-4">Skills</h2>
           <SkillsCard />
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="py-20 border-b border-purple-100">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-purple-700 mb-4">Projects</h2>
-          <Projects />
-        </div>
-      </section>
+     {/* Projects */}
+    <section
+      id="projects"
+      className="relative py-20 border-b border-green-100 bg-white overflow-hidden"
+    >
+      {/* Blurred background blob */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 right-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-yellow-500 opacity-50 blur-[80px]" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <h2 className="text-3xl font-bold text-purple-700 mb-4">Projects</h2>
+        <Projects />
+      </div>
+    </section>
+
 
       {/* Experience */}
-      <section id="experience" className="py-20 border-b border-purple-100">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="experience" className="relative py-20 border-b border-green-100 bg-white overflow-hidden">
+        {/* Blurred background blob */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 right-0 h-[500px] w-[500px] -translate-x-[90%] translate-y-[80%] rounded-full bg-pink-300 opacity-50 blur-[80px]" />
+      </div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Experience</h2>
           <Experiences />
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-20">
-        <div className="max-w-4xl mx-auto px-4">
+      <section id="contact" className="relative py-20 overflow-hidden bg-white">
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Contact</h2>
           <Contacts />
         </div>
       </section>
 
 
-      {/* Footer */}
-      <footer className="text-center text-sm text-purple-300 py-6 border-t border-purple-100">
-        © {new Date().getFullYear()} Elisa Holland. All rights reserved.
-      </footer>
+
+{/* Footer Wrapper */}
+<div className="relative overflow-visible bg-white">
+
+  {/* Footer */}
+  <footer className="text-center text-sm text-purple-400 py-6 border-t border-purple-100 relative z-10">
+    © {new Date().getFullYear()} Elisa Holland. All rights reserved.
+  </footer>
+</div>
+
     </div>
   )
 }
 
 export default App
+
