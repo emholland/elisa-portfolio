@@ -102,7 +102,7 @@ function App() {
      {/* Projects */}
     <section
       id="projects"
-      className="relative py-20 border-b border-green-100 bg-white overflow-hidden"
+      className="relative py-20 border-b border-purple-100 bg-white overflow-visible"
     >
       {/* Blurred background blob */}
       <div className="absolute inset-0 z-10">
@@ -117,7 +117,7 @@ function App() {
 
 
       {/* Experience */}
-      <section id="experience" className="relative py-20 border-b border-green-100 bg-white overflow-hidden">
+      <section id="experience" className="relative py-20 border-b border-purple-100 bg-white overflow-hidden">
         {/* Blurred background blob */}
       <div className="absolute inset-0 z-10">
         <div className="absolute top-0 right-0 h-[500px] w-[500px] -translate-x-[90%] translate-y-[80%] rounded-full bg-pink-300 opacity-50 blur-[80px]" />
@@ -129,7 +129,11 @@ function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative py-20 overflow-hidden bg-white">
+      <section id="contact" className="relative py-20 overflow-visible bg-white">
+        {/* Blurred background blob */}
+      <div className="absolute inset-0 z-10">
+        <div className="absolute top-0 right-0 h-[300px] w-[300px] -translate-x-[300%] translate-y-[10%] rounded-full bg-indigo-300 opacity-50 blur-[80px]" />
+      </div>
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Contact</h2>
           <Contacts />
