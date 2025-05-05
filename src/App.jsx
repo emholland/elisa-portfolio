@@ -5,6 +5,7 @@ import MorphBlob from "./Components/MorphBlob";
 import Contacts from './Components/Contacts';
 import SkillsCard from './Components/SkillCard';
 import AboutMe from './Components/AbooutMe';
+import Projects from './Components/Projects';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -102,7 +103,7 @@ function App() {
       <section id="projects" className="py-20 border-b border-purple-100">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-purple-700 mb-4">Projects</h2>
-          <p className="text-gray-600">Project cards or links will be displayed in this section.</p>
+          <Projects />
         </div>
       </section>
 
