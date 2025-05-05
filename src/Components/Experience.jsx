@@ -87,9 +87,10 @@ const TimelineCard = ({ exp }) => {
             <p className="text-purple-700 italic">
               {exp.company} · {exp.date}
             </p>
-            <div className="mt-2 text-gray-700">
+            <div className="mt-2 text-gray-700 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:font-medium [&_li]:text-purple-800">
               <ReactMarkdown>{exp.description}</ReactMarkdown>
             </div>
+
 
 
           </motion.div>
