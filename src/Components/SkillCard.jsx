@@ -55,7 +55,7 @@ export default function SkillsSection() {
   };
 
   return (
-    <section className=" px-4 sm:px-8">
+    <section className="px-10 sm:px-8">
 
       {/* Nav Tabs */}
       <div className="flex justify-center py-2 gap-4 mb-8 rounded-xl bg-purple-50 border-1 border-purple-600">
