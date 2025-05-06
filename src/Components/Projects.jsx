@@ -102,7 +102,7 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
   const toggleCard = (index) => {
     lastInteractionRef.current = Date.now();
     setAutoMode(false);
-    setExpandedIndex((prev) => (prev === index ? null : index));
+    setExpandedIndex(index);
   };
 
   // Watch for idle time
