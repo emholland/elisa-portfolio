@@ -10,7 +10,13 @@ export default function Projects() {
 const projects = [
   {
     title: "AI Story Builder System",
-    date: "2025 – Present",
+    date: "Spring 2025",
+    github: "https://github.com/Capstone-Projects-2025-Spring/project-003-story-builder-team-2",
+    media: {
+      type: "video",
+      src: "/AI Storybuilder Demo.mp4", // Replace with your real embed link
+      alt: "Video demo of AI Story Builder",
+    },
     description: `**A collaborative storytelling platform powered by AI agents and user-driven prompts**
 
 The **AI Story Builder** is a full-stack web application that enables users to co-create interactive stories with simulated AI agents. Built with **React**, **Node.js**, and the **OpenAI API**, the platform dynamically generates story chapters through agent collaboration, where each AI persona contributes and votes on the best continuation.
@@ -26,6 +32,13 @@ I added analytics to evaluate agent behavior and user engagement, using insights
   {
     title: "Startup Failure Prediction Model",
     date: "Spring 2025",
+    media: {
+      type: "thumbnail",
+      src: "StartupThumbnail.png",
+      alt: "Presentation thumbnail for Startup Failure Predictor",
+      link: "DS Final_ Startup Failure Predictor.pdf", // optional PDF download/view link
+    },
+    
     description: `**A data-driven machine learning model for identifying high-risk startups**
 
 - Built and presented a logistic regression classifier to predict startup failure using real-world startup data.
@@ -39,6 +52,7 @@ I added analytics to evaluate agent behavior and user engagement, using insights
   {
     title: "Mafia Multiplayer Game",
     date: "Fall 2024",
+    github: "https://github.com/emholland/mafia-uhh",
     description:
       `**A real-time multiplayer strategy game implemented with React Native and WebSocket**
 
@@ -55,6 +69,11 @@ The final product simulates the Mafia party game in a digital environment, provi
   {
     title: "Restaurant Review Website",
     date: "Spring 2024",
+    media: {
+      type: "image",
+      src: "PhillyEats.png",
+      alt: "Screenshot of Philly Eats restaurant review web app",
+    },
     description:
       `**A full-stack restaurant review platform with user authentication and dynamic content**
 
@@ -83,7 +102,7 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
   const toggleCard = (index) => {
     lastInteractionRef.current = Date.now();
     setAutoMode(false);
-    setExpandedIndex((prev) => (prev === index ? null : index));
+    setExpandedIndex(index);
   };
 
   // Watch for idle time
@@ -124,8 +143,9 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
             layout
             onClick={() => toggleCard(index)}
             transition={{
-              layout: { type: "spring", stiffness: 80, damping: 40 },
+              layout: { type: "spring", duration: 0.1, ease: "easeInOut", bounce: 0},
             }}
+            
             className={`cursor-pointer bg-purple-100 bg-opacity-30 border border-purple-200 rounded-xl p-4 transition hover:shadow-md ${
               isExpanded ? "col-span-1 sm:col-span-2 lg:col-span-3" : ""
             }`}
@@ -140,17 +160,75 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
             {isExpanded && (
               <motion.div
                 layout
-                initial={{ opacity: 0, y: -8 }}
+                initial={{ opacity: 1, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ type: "spring", bounce: 0, duration: 0.5, ease: "easeOut" }}
               >
                 <div className="description mb-2 text-sm text-gray-700">
                   <ReactMarkdown>{proj.description}</ReactMarkdown>
                 </div>
+
+                {proj.media?.type === "video" && (
+                    <div className="mb-4 w-full flex justify-center">
+                      <video
+                        controls
+                        src={proj.media.src}
+                        className="rounded-md w-full max-w-[400px] "
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  )}
+
+                {proj.media?.type === "image" && (
+                  <div className="w-full flex justify-center mt-4 mb-4">
+                    <img
+                      src={proj.media.src}
+                      alt={proj.media.alt || proj.title}
+                      className="rounded-md border border-purple-200 max-w-full sm:max-w-[500px] object-cover"
+                    />
+                  </div>
+                )}
+
+                {proj.media?.type === "thumbnail" && (
+                  <div className="w-full flex justify-center mt-4">
+                    <a
+                      href={proj.media.link || proj.media.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative group inline-block"
+                    >
+                      <img
+                        src={proj.media.src}
+                        alt={proj.media.alt || proj.title}
+                        className="rounded-md border border-purple-200 max-w-full sm:max-w-[500px] object-cover group-hover:opacity-90 transition"
+                      />
+                      {/* Hover Overlay Icon or Text */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition">
+                        <p className="text-white font-medium text-sm sm:text-base">Click to view full presentation</p>
+                      </div>
+                    </a>
+                  </div>
+                )}
+
+
+
                 <p className="text-sm text-purple-600">
                   <strong>Tech Stack:</strong> {proj.stack.join(", ")}
                 </p>
+                {proj.github && (
+                <p className="mt-2 text-sm">
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-700 underline hover:text-purple-900"
+                  >
+                    View GitHub Repository →
+                  </a>
+                </p>
+              )}
               </motion.div>
             )}
           </motion.div>

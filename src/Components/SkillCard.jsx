@@ -17,7 +17,10 @@ import {
   SiGithub,
   SiJest,
   SiPostman,
+  SiC,
 } from "react-icons/si";
+import { FiCircle } from "react-icons/fi"; 
+
 
 const skills = {
   Frontend: [
@@ -28,18 +31,26 @@ const skills = {
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "Vite", icon: <SiVite /> },
     { name: "Figma", icon: <SiFigma /> },
+    { name: "Responsive Design", icon: <SiCss3 /> },
   ],
   Backend: [
     { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Python", icon: <SiPython /> },
+    { name: "Java", icon: <FiCircle /> },
+    { name: "C", icon: <SiC /> },
     { name: "SQL", icon: <SiMysql /> },
     { name: "Firebase", icon: <SiFirebase /> },
     { name: "OpenAI API", icon: <SiOpenai /> },
+    { name: "Spring Boot", icon: <FiCircle /> },
+    { name: "REST APIs", icon: <SiPostman /> },
   ],
   "Other Tools": [
     { name: "Git/GitHub", icon: <SiGithub /> },
     { name: "Jest", icon: <SiJest /> },
     { name: "Postman", icon: <SiPostman /> },
+    { name: "Agile / Scrum", icon: <FiCircle /> },     // no exact icon
+    { name: "Jira", icon: <FiCircle /> },              // no exact icon
+    { name: "CI/CD & Deployment", icon: <FiCircle /> },// no exact icon
   ],
 };
 
@@ -55,15 +66,14 @@ export default function SkillsSection() {
   };
 
   return (
-    <section className="px-10 sm:px-8">
-
+    <section className="px-4 sm:px-6 max-w-4xl mx-auto w-full">
       {/* Nav Tabs */}
-      <div className="flex justify-center py-2 gap-4 mb-8 rounded-xl bg-purple-50 border-1 border-purple-600">
+      <div className="flex flex-wrap justify-center py-3 gap-3 sm:gap-4 mb-8 rounded-xl bg-purple-50 border border-purple-200">
         {Object.keys(skills).map((category) => (
           <button
             key={category}
             onClick={() => handleTabClick(category)}
-            className={`px-6 py-3 rounded-xl text-md font-md border transition-all
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-sm sm:text-base font-medium border transition-all
               ${
                 activeTab === category
                   ? "bg-purple-700 text-white border-purple-700"
@@ -74,9 +84,9 @@ export default function SkillsSection() {
           </button>
         ))}
       </div>
-
+  
       {/* Animated Skills Grid */}
-      <div className="relative h-[160px] sm:h-[120px] overflow-hidden">
+      <div className="relative min-h-[240px] sm:min-h-[200px] w-full overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -84,25 +94,20 @@ export default function SkillsSection() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: direction === 1 ? -100 : 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute w-full top-0 flex flex-wrap gap-4 justify-center"
+            className="absolute w-full top-0 left-0 flex flex-wrap gap-3 sm:gap-4 justify-center"
           >
-           {skills[activeTab].map(({ name, icon }) => (
+            {skills[activeTab].map(({ name, icon }) => (
               <div
                 key={name}
-                className="flex items-center gap-3 px-5 py-3 rounded-md bg-purple-200 text-purple-800 text-sm font-medium shadow-sm hover:bg-purple-200 transition"
+                className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-3 rounded-md bg-purple-200 text-purple-800 text-sm font-medium shadow-sm hover:bg-purple-300 transition max-w-[90vw] sm:max-w-none"
               >
-                <span className="text-lg">{icon}</span>
+                <span className="text-lg sm:text-xl">{icon}</span>
                 <span>{name}</span>
               </div>
             ))}
-
           </motion.div>
         </AnimatePresence>
       </div>
     </section>
   );
 }
-
-
-
-  

@@ -10,9 +10,9 @@ const experiences = [
     date: "Jan 2025 – Present",
     description: `At Trinity IT, I contributed to full-stack development projects and internal AI research:
 
-        - Led R&D on AWS AI services (e.g., Bedrock, SageMaker)  
-        - Enhanced enterprise websites using React and Drupal  
-        - Participated in agile ceremonies and collaborated cross-functionally`,
+- Led R&D on AWS AI services (e.g., Bedrock, SageMaker)  
+- Enhanced enterprise websites using React and Drupal  
+- Participated in agile ceremonies and collaborated cross-functionally`,
   },
   {
     role: "Tech Project Management Intern",
@@ -21,13 +21,10 @@ const experiences = [
     description:
       `This role blended technical problem-solving with business process improvement and agile project work:
 
-        - Shadowed a senior project manager and supported agile sprint planning, 
-          team coordination, and internal reporting  
-        - Automated manual Excel-based test reporting using Python, saving hours of 
-          weekly effort  
-        - Created SQL dashboards using Metabase  
-        - Proposed and helped lead a structured internship redesign initiative, 
-          selected as the top summer project`,
+- Shadowed a senior project manager and supported agile sprint planning, team coordination, and internal reporting  
+- Automated manual Excel-based test reporting using Python, saving hours of weekly effort  
+- Created SQL dashboards using Metabase  
+- Proposed and helped lead a structured internship redesign initiative, selected as the top summer project`,
   },
   {
     role: "Software Developer Intern",
@@ -35,9 +32,9 @@ const experiences = [
     date: "Jan 2024 – May 2024",
     description: `My first technical internship involved supporting backend systems and DevOps practices:
 
-      - Docker, Kubernetes, and AWS; improved deployment pipeline reliability  
-      - Practiced SCRUM and Kanban methodologies in a professional development team  
-      - Conducted peer code reviews and followed secure coding best practices`,
+- Docker, Kubernetes, and AWS; improved deployment pipeline reliability  
+- Practiced SCRUM and Kanban methodologies in a professional development team  
+- Conducted peer code reviews and followed secure coding best practices`,
   },
   {
     role: "Discreate Mathmatics Teaching Assistant",
@@ -45,23 +42,22 @@ const experiences = [
     date: "Fall 2023",
     description:`Personally selected by faculty to support one of the department’s core theoretical courses:
 
-        - Lectured weekly recitations and provided 1-on-1 tutoring to over 30 students
-        - Helped students understand logic, proofs, induction, and combinatorics
-        - Fostered a collaborative learning environment and supported student 
-          confidence in a challenging subject`,
+- Lectured weekly recitations and provided 1-on-1 tutoring to over 30 students
+- Helped students understand logic, proofs, induction, and combinatorics
+- Fostered a collaborative learning environment and supported student confidence in a challenging subject`,
   },
 ];
 
 const TimelineCard = ({ exp }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    margin: "-45% 0px -45% 0px", // Trigger when centered
+    margin: "-45% 0px -45% 0px",
   });
 
   return (
-    <div className="relative flex items-start">
-      {/* Timeline Line + Dot */}
-      <div className="flex flex-col items-center mr-6">
+    <div className="relative flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      {/* Timeline Line */}
+      <div className="hidden sm:flex flex-col items-center mr-6">
         <div className="w-1 h-full bg-purple-300" />
       </div>
 
@@ -71,52 +67,42 @@ const TimelineCard = ({ exp }) => {
         initial={{ scale: 0.95, opacity: 0.5 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.95, opacity: 0.5 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="bg-purple-100 bg-opacity-30 p-6 rounded-xl border border-purple-200 shadow-md w-full"
+        className="mb-20 min-w-0 bg-purple-100 bg-opacity-30 p-4 sm:p-6 rounded-xl border border-purple-200 shadow-md w-full max-w-full"
       >
-        <h3 className="text-xl font-semibold text-purple-800">{exp.role}</h3>
+        <h3 className="text-lg sm:text-xl font-semibold text-purple-800">{exp.role}</h3>
 
-              <AnimatePresence mode="wait">
-        {isInView && (
-          <motion.div
-            key="details"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          >
-            <p className="text-purple-700 italic">
-              {exp.company} · {exp.date}
-            </p>
-            <div className="mt-2 text-gray-700 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:font-medium [&_li]:text-purple-800">
-              <ReactMarkdown>{exp.description}</ReactMarkdown>
-            </div>
-
-
-
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+        <AnimatePresence mode="wait">
+          {isInView && (
+            <motion.div
+              key="details"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              <p className="text-sm sm:text-base text-purple-700 italic mt-1">
+                {exp.company} · {exp.date}
+              </p>
+              <div className="mt-3 text-sm sm:text-base text-gray-700 description min-w-0 break-words whitespace-normal [&_ul]:list-disc [&_ul]:pl-5 [&_li]:font-medium [&_li]:text-purple-800 [&_li]:break-words [&_li]:whitespace-normal">
+                <ReactMarkdown>{exp.description}</ReactMarkdown>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
-      {!isInView && (
-  <div className="h-55 bg-white transition-all duration-700 ease-in-out" />
-)}
     </div>
   );
 };
 
-
-
-
-
 const Experiences = () => {
   return (
-      <div className="relative space-y-12 border-l-4 border-purple-300 pl-10">
-        {experiences.map((exp, index) => (
-          <TimelineCard key={index} exp={exp} />
-        ))}
-      </div>
+    <div className="relative space-y-10 sm:space-y-12 sm:border-l-4 sm:pl-10 border-purple-300 px-4">
+      {experiences.map((exp, index) => (
+        <TimelineCard key={index} exp={exp} />
+      ))}
+    </div>
   );
 };
+
 
 export default Experiences;
