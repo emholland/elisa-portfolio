@@ -7,7 +7,7 @@ const experiences = [
   {
     role: "Software Developer Intern",
     company: "Trinity IT",
-    date: "Jan 2025 – Present",
+    date: "Jan 2025 – April 2025",
     description: `At Trinity IT, I contributed to full-stack development projects and internal AI research:
 
 - Led R&D on AWS AI services (e.g., Bedrock, SageMaker)  
@@ -22,8 +22,9 @@ const experiences = [
       `This role blended technical problem-solving with business process improvement and agile project work:
 
 - Shadowed a senior project manager and supported agile sprint planning, team coordination, and internal reporting  
-- Automated manual Excel-based test reporting using Python, saving hours of weekly effort  
-- Created SQL dashboards using Metabase  
+- Automated manual Excel-based reporting using Python, saving hours of weekly effort  
+- Automted website testing using python to accelerate move to aws platform 
+- Created SQL dashboards and reports for top clients using Metabase  
 - Proposed and helped lead a structured internship redesign initiative, selected as the top summer project`,
   },
   {
@@ -32,7 +33,7 @@ const experiences = [
     date: "Jan 2024 – May 2024",
     description: `My first technical internship involved supporting backend systems and DevOps practices:
 
-- Docker, Kubernetes, and AWS; improved deployment pipeline reliability  
+- Docker, Kubernetes, and AWS training and experience; improved deployment pipeline reliability  
 - Practiced SCRUM and Kanban methodologies in a professional development team  
 - Conducted peer code reviews and followed secure coding best practices`,
   },
@@ -46,6 +47,15 @@ const experiences = [
 - Helped students understand logic, proofs, induction, and combinatorics
 - Fostered a collaborative learning environment and supported student confidence in a challenging subject`,
   },
+  {
+    role: "After School Coding Insurtuctor",
+    company: "",
+    date: "Fall 2023",
+    description: `Taught coding and STEM lessons to K–8 students at local schools:
+
+- Developed and delivered engaging, age-appropriate lessons in Scratch and basic programming concepts
+- Adapted teaching strategies to meet a range of learning styles and classroom environments
+- Inspired early interest in STEM through hands-on activities, games, and collaborative projects`},
 ];
 
 const TimelineCard = ({ exp }) => {
