@@ -28,7 +28,7 @@ function App() {
 
      
      {/* Nav Bar */}
-     <nav className="fixed top-4 inset-x-4 sm:left-1/2 sm:-translate-x-1/2 bg-white/90 backdrop-blur-md shadow-md rounded-full px-4 sm:px-6 py-2 z-[999] border border-purple-100 max-w-[95vw] sm:max-w-fit mx-auto">
+     <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md shadow-md rounded-full px-4 sm:px-6 py-2 z-[999] border border-purple-100 max-w-[95vw] sm:max-w-fit max-w-[500px]">
         <ul className="flex justify-center gap-4 sm:gap-6 font-medium text-[3vw] sm:text-sm whitespace-nowrap">
           <li><a href="#skills" className="hover:text-purple-600">Skills</a></li>
           <li><a href="#projects" className="hover:text-purple-600">Projects</a></li>
