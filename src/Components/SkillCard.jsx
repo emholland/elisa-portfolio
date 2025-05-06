@@ -55,7 +55,7 @@ export default function SkillsSection() {
   };
 
   return (
-    <section className="px-10 sm:px-8">
+    <section className="px-3 sm:px-4">
 
       {/* Nav Tabs */}
       <div className="flex justify-center py-2 gap-4 mb-8 rounded-xl bg-purple-50 border-1 border-purple-600">
@@ -76,7 +76,7 @@ export default function SkillsSection() {
       </div>
 
       {/* Animated Skills Grid */}
-      <div className="relative h-[160px] sm:h-[120px] overflow-hidden">
+      <div className="relative h-[250px] sm:h-[200px] overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

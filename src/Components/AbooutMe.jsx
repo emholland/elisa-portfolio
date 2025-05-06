@@ -3,7 +3,7 @@ const AboutMe = () => {
       <section
         id="about"
         style={{ backgroundColor: 'white' }}
-        className="py-12 px-6 rounded-2xl shadow-md max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6"
+        className="py-12 px-4 sm:px-6 rounded-2xl shadow-md max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6"
       >
         <div className="flex-shrink-0">
           <img

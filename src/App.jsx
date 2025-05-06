@@ -24,11 +24,12 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 to-white text-gray-800 font-sans">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 to-white text-gray-800 font-sans overflow-x-hidden">
+
      
      {/* Nav Bar */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md shadow-md rounded-full px-6 py-2 z-50 border border-purple-100">
-        <ul className="flex gap-6 text-sm font-medium text-gray-700">
+     <nav className="fixed top-4 inset-x-4 sm:left-1/2 sm:-translate-x-1/2 bg-white/90 backdrop-blur-md shadow-md rounded-full px-4 sm:px-6 py-2 z-[999] border border-purple-100 max-w-[95vw] sm:max-w-fit mx-auto">
+        <ul className="flex justify-center gap-4 sm:gap-6 font-medium text-[3vw] sm:text-sm whitespace-nowrap">
           <li><a href="#skills" className="hover:text-purple-600">Skills</a></li>
           <li><a href="#projects" className="hover:text-purple-600">Projects</a></li>
           <li><a href="#experience" className="hover:text-purple-600">Experience</a></li>
@@ -44,6 +45,7 @@ function App() {
           </li>
         </ul>
       </nav>
+
 
 
       {/* Landing Page / About */}

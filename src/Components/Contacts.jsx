@@ -2,7 +2,7 @@ import { Mail, Linkedin } from 'lucide-react';
 
 const Contacts = () => {
   return (
-    <section id="contact" className="py-12 px-6 text-center bg-purple-50 rounded-2xl shadow-md">
+    <section id="contact" className="py-12 px-4 sm:px-6 text-center bg-purple-50 rounded-2xl shadow-md w-90">
       <h2 className="text-3xl font-bold mb-1">I am currently looking for a job!</h2>
       <p> Feel free to reach out—I’m always open to new opportunities and collaborations!</p>
       <div className="flex justify-center gap-8 flex-wrap items-center text-lg m-6">
