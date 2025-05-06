@@ -52,6 +52,11 @@ I added analytics to evaluate agent behavior and user engagement, using insights
   {
     title: "Mafia Multiplayer Game",
     date: "Fall 2024",
+    media: {
+      type: "image",
+      src: "MafiaImgs.png",
+      alt: "Phone images of Mafia Game",
+    },
     github: "https://github.com/emholland/mafia-uhh",
     description:
       `**A real-time multiplayer strategy game implemented with React Native and WebSocket**
@@ -72,7 +77,7 @@ The final product simulates the Mafia party game in a digital environment, provi
     media: {
       type: "image",
       src: "PhillyEats.png",
-      alt: "Screenshot of Philly Eats restaurant review web app",
+      alt: "Philly Eats restaurant review web app landing page",
     },
     description:
       `**A full-stack restaurant review platform with user authentication and dynamic content**
