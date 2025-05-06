@@ -17,7 +17,10 @@ import {
   SiGithub,
   SiJest,
   SiPostman,
+  SiC,
 } from "react-icons/si";
+import { FiCircle } from "react-icons/fi"; 
+
 
 const skills = {
   Frontend: [
@@ -28,18 +31,26 @@ const skills = {
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "Vite", icon: <SiVite /> },
     { name: "Figma", icon: <SiFigma /> },
+    { name: "Responsive Design", icon: <SiCss3 /> },
   ],
   Backend: [
     { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Python", icon: <SiPython /> },
+    { name: "Java", icon: <FiCircle /> },
+    { name: "C", icon: <SiC /> },
     { name: "SQL", icon: <SiMysql /> },
     { name: "Firebase", icon: <SiFirebase /> },
     { name: "OpenAI API", icon: <SiOpenai /> },
+    { name: "Spring Boot", icon: <FiCircle /> },
+    { name: "REST APIs", icon: <SiPostman /> },
   ],
   "Other Tools": [
     { name: "Git/GitHub", icon: <SiGithub /> },
     { name: "Jest", icon: <SiJest /> },
     { name: "Postman", icon: <SiPostman /> },
+    { name: "Agile / Scrum", icon: <FiCircle /> },     // no exact icon
+    { name: "Jira", icon: <FiCircle /> },              // no exact icon
+    { name: "CI/CD & Deployment", icon: <FiCircle /> },// no exact icon
   ],
 };
 
