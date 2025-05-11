@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef  } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 
@@ -96,25 +96,27 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
   const [autoMode, setAutoMode] = useState(true);
   const [autoStep, setAutoStep] = useState(0);
   const lastInteractionRef = useRef(Date.now());
-  const AUTO_DELAY = 10000; // 6 sec idle before auto mode
-  const AUTO_INTERVAL = 5000; // open a new card every 2s
+  const[delay, setDelay] = useState(10000); // 10 sec idle before auto mode
+  const AUTO_INTERVAL = 5000; // open a new card every 5s
   
 
 
 
 
   // Record any click to reset the timer
-  const toggleCard = (index) => {
+  const toggleCard = useCallback((index) => {
     lastInteractionRef.current = Date.now();
     setAutoMode(false);
+    setDelay(600000);
     setExpandedIndex(index);
-  };
+  }, []);
 
   // Watch for idle time
   useEffect(() => {
     const checkIdle = setInterval(() => {
-      if (!autoMode && Date.now() - lastInteractionRef.current > AUTO_DELAY) {
+      if (!autoMode && Date.now() - lastInteractionRef.current > delay) {
         setAutoMode(true);
+        setDelay(10000)
         setAutoStep(0);
       }
     }, 1000);
@@ -135,40 +137,30 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
   }, [autoStep, autoMode, projects.length]);
 
   return (
-    <motion.div
-      layout
+    <div
+
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       {projects.map((proj, index) => {
         const isExpanded = expandedIndex === index;
 
         return (
-          <motion.div
+          <div
             key={proj.title}
-            layout
             onClick={() => toggleCard(index)}
-            transition={{
-              layout: { type: "spring", duration: 0.1, ease: "easeInOut", bounce: 0},
-            }}
-            
             className={`cursor-pointer bg-purple-100 bg-opacity-30 border border-purple-200 rounded-xl p-4 transition hover:shadow-md ${
               isExpanded ? "col-span-1 sm:col-span-2 lg:col-span-3" : ""
             }`}
           >
-            <motion.h3 layout className="text-lg font-semibold text-purple-800">
+            <h3 className="text-lg font-semibold text-purple-800">
               {proj.title}
-            </motion.h3>
-            <motion.p layout className="text-sm text-purple-600 italic mb-2">
+            </h3>
+            <p className="text-sm text-purple-600 italic mb-2">
               {proj.date}
-            </motion.p>
+            </p>
 
             {isExpanded && (
-              <motion.div
-                layout
-                initial={{ opacity: 1, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ type: "spring", bounce: 0, duration: 0.5, ease: "easeOut" }}
+              <div
               >
                 <div className="description mb-2 text-sm text-gray-700">
                   <ReactMarkdown>{proj.description}</ReactMarkdown>
@@ -207,10 +199,10 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
                       <img
                         src={proj.media.src}
                         alt={proj.media.alt || proj.title}
-                        className="rounded-md border border-purple-200 max-w-full sm:max-w-[500px] object-cover group-hover:opacity-90 transition"
+                        className="rounded-md border border-purple-200 max-w-full sm:max-w-[500px] object-cover group-hover:opacity-90 "
                       />
                       {/* Hover Overlay Icon or Text */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition">
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 ">
                         <p className="text-white font-medium text-sm sm:text-base">Click to view full presentation</p>
                       </div>
                     </a>
@@ -234,11 +226,11 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
                   </a>
                 </p>
               )}
-              </motion.div>
+              </div>
             )}
-          </motion.div>
+          </div>
         );
       })}
-    </motion.div>
+    </div>
   );
 }
