@@ -77,7 +77,7 @@ const TimelineCard = ({ exp }) => {
         initial={{ scale: 0.95, opacity: 0.5 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.95, opacity: 0.5 }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="mb-20 min-w-0 bg-purple-100 bg-opacity-30 p-4 sm:p-6 rounded-xl border border-purple-200 shadow-md w-full max-w-full"
+        className=" min-w-0 bg-purple-100 bg-opacity-30 p-4 sm:p-6 rounded-xl border border-purple-200 shadow-md w-full max-w-full"
       >
         <h3 className="text-lg sm:text-xl font-semibold text-purple-800">{exp.role}</h3>
 

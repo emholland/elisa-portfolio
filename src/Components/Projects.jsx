@@ -25,9 +25,15 @@ I designed the architecture to support dynamic, turn-based logic and implemented
 
 To guide development, I created **UML diagrams** (class, sequence, and use case) to map out interactions. I also led **agile sprints** using **Jira**, coordinating collaboration between design, development, and QA.
 
-I added analytics to evaluate agent behavior and user engagement, using insights to improve both technical quality and user experience.
+I added analytics to evaluate agent behavior and user engagement, using insights to improve both technical quality and user experience. Below is my final presentation for my capstone class (May 1st, 2025). 
 `,
     stack: ["React", "Firebase", "OpenAI API", "Docker", "Jira"],
+    description2: `I've continued to work on this project after graduation by redeploying it on **Render**, enhancing the UI, and expanding agent autonomy through a new **debate phase** in the writing flow.
+
+    It's still a work in progress, but you can check out the current version here:  `,
+
+    link:"https://writers-room.onrender.com",
+    
   },
   {
     title: "Startup Failure Prediction Model",
@@ -207,7 +213,28 @@ Deployed on **Tomcat**, the site demonstrates core principles of **MVC architect
                       </div>
                     </a>
                   </div>
+
+                  
                 )}
+
+                <div className="description mb-2 text-sm text-gray-700">
+                  <ReactMarkdown>{proj.description2}</ReactMarkdown>
+                </div>
+
+                {proj.link && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="justify-center inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300"
+                    >
+                      Visit Live Site
+                    </a>
+                  </div>
+                )}
+                <br></br>
+
 
 
 
