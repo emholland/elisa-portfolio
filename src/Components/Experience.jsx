@@ -81,24 +81,19 @@ const TimelineCard = ({ exp }) => {
       >
         <h3 className="text-lg sm:text-xl font-semibold text-purple-800">{exp.role}</h3>
 
-        <AnimatePresence mode="wait">
-          {isInView && (
-            <motion.div
-              key="details"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-            >
-              <p className="text-sm sm:text-base text-purple-700 italic mt-1">
-                {exp.company} · {exp.date}
-              </p>
-              <div className="mt-3 text-sm sm:text-base text-gray-700 description min-w-0 break-words whitespace-normal [&_ul]:list-disc [&_ul]:pl-5 [&_li]:font-medium [&_li]:text-purple-800 [&_li]:break-words [&_li]:whitespace-normal">
-                <ReactMarkdown>{exp.description}</ReactMarkdown>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: "easeInOut" }}
+>
+  <p className="text-sm sm:text-base text-purple-700 italic mt-1">
+    {exp.company} · {exp.date}
+  </p>
+  <div className="mt-3 text-sm sm:text-base text-gray-700 description min-w-0 break-words whitespace-normal [&_ul]:list-disc [&_ul]:pl-5 [&_li]:font-medium [&_li]:text-purple-800 [&_li]:break-words [&_li]:whitespace-normal">
+    <ReactMarkdown>{exp.description}</ReactMarkdown>
+  </div>
+</motion.div>
+
       </motion.div>
     </div>
   );
